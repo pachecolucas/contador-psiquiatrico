@@ -1,0 +1,15 @@
+<button onclick="mais()"></button>
+<script>
+    let numero = 0
+
+    function mais() {
+        numero++
+        render()
+    }
+
+    function render() {
+        document.querySelector("button").innerText = numero
+    }
+
+    render()
+</script>
