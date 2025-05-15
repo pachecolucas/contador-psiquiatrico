@@ -12,9 +12,25 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
+
+      function Contador(props) {
+        const [numero, setNumero] = React.useState(0)
+
+        function mais() {
+            setNumero(numero + 1)
+        }
+
+        return <button onClick={mais}>{props.title ?? "Texto"}: {numero}</button>
+      }
     
       function MyApp() {
-        return <h1>Hello, world! {3+5}</h1>;
+        return <div>
+                <h1>Hello, world! {3+5}</h1>
+                <Contador />
+                <Contador />
+                <Contador title="Diferente" />
+                <Contador />
+            </div>;
       }
 
       const container = document.getElementById('root');
